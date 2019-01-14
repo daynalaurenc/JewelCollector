@@ -5,7 +5,10 @@ var win = 0;
 var loss = 0;
 var totalNumber = "";
 var jewels = [];
-
+var redJewel = "";
+var blueJewel = "";
+var yellowJewel = "";
+var greenJewel = "";
 
 function resetGame() {
     var computerChoice = 19 + Math.floor(Math.random() * 120);
@@ -20,7 +23,7 @@ function resetGame() {
     blueJewel = [1];
     yellowJewel = [2];
     greenJewel = [3];
-    
+
     $("#random-number").text(computerChoice);
     // $("#random-number").html("Random Number: " + computerChoice);
     $("#total-number").text(totalNumber) 
@@ -30,14 +33,32 @@ function resetGame() {
 resetGame();
 
 
-$("#jewels").on("click", function() {
-    // totalNumber + redjewel = randomNumber;
-    var num = $(this).val();
-    console.log("Jewel is clicked!", totalNumber);
+$("#red").on("click", function() {
+    var totalNumber = (totalNumber + redJewel);
+    statement();
+    console.log("Red Jewel is clicked!", totalNumber);
+});
 
+$("#blue").on("click", function() {
+    var totalNumber = (totalNumber + blueJewel);
+    statement();
+    console.log("Blue Jewel is clicked!", totalNumber);
+});
 
+$("#yellow").on("click", function() {
+    var totalNumber = (totalNumber + yellowJewel);
+    statement();
+    console.log("Yellow Jewel is clicked!", totalNumber);
+});
 
+$("#green").on("click", function() {
+    var totalNumber = (totalNumber + greenJewel);
+    statement();
+    console.log("Green Jewel is clicked!", totalNumber);
+    // var num = $(this).val();
+});
 
+function statement() {
     if (totalNumber === randomNumber) {
         win++;
         $("#wins").text("Wins: " + win);
@@ -50,6 +71,7 @@ $("#jewels").on("click", function() {
         resetGame();
     }
 
+};
 
 });
 
@@ -90,6 +112,6 @@ $("#jewels").on("click", function() {
 //     result = greenJewel + greenJewel
 //     break;
 
-});
+
 
 

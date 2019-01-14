@@ -1,0 +1,30 @@
+#jewels{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid red;
+    align-items: center;
+}
+
+#red{
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+#blue{
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+
+#yellow{
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+
+#green{
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+   
