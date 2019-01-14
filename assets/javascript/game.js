@@ -32,8 +32,7 @@ function resetGame() {
     yellowJewel = jewels[2];
     greenJewel = jewels[3];
         
-    $("#random-number").text(computerChoice);
-        // $("#random-number").html("Random Number: " + computerChoice);
+    $("#randomNumber").html("Random Number: " + computerChoice);
     $("#finalNumber").text(totalNumber) 
         
 };
