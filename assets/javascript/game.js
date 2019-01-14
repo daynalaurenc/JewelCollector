@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+var computerChoice = 19 + Math.floor(Math.random() * 120);
+$("#randomNumber").html("Random Number: " + computerChoice);
+console.log("Beat this number!", computerChoice);
+
 var randomNumber = "";
 var win = 0;
 var loss = 0;
@@ -8,10 +12,10 @@ var totalNumber = 0;
 var redJewel = "";
 var blueJewel = "";
 var yellowJewel = "";
-var greenJewel = "";
-    
-var computerChoice = 19 + Math.floor(Math.random() * 120);
-$("#random-number").text(computerChoice);
+var greenJewel = "";  
+
+// var computerChoice = 19 + Math.floor(Math.random() * 120);
+// $("#random-number").text(computerChoice);
 
 function resetGame() {
     computerChoice;
@@ -87,12 +91,14 @@ function statement() {
     if (totalNumber === computerChoice) {
         win++;
         $("#wins").text("Wins: " + win);
+        console.log("You win!");
         resetGame();
     }
     
     else if (totalNumber > computerChoice) {
-        losses++;
-        $("#losses").text("Losses: " + losses);
+        loss++;
+        $("#losses").text("Losses: " + loss);
+        console.log("You lose!");
         resetGame();
     }
     
