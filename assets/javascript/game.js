@@ -1,13 +1,12 @@
 $(document).ready(function() {
 
-var computerChoice = 19 + Math.floor(Math.random() * 120);
+var computerChoice = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 $("#randomNumber").html("Random Number: " + computerChoice);
 console.log("Beat this number!", computerChoice);
     
 var randomNumber = "";
 var win = 0;
 var loss = 0;
-var jewels = [];
 var totalNumber = 0;
 var redJewel = "";
 var blueJewel = "";
@@ -17,10 +16,11 @@ var greenJewel = "";
 
     
 function resetGame() {
-    computerChoice;
+    computerChoice = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
     totalNumber = 0;
+    var jewels = [];
     for(var i = 0; i < 4; i++) {
-        var jewelRandom = 1 + Math.floor(Math.random() * 12);
+        var jewelRandom = Math.floor(Math.random() * 11) + 1;
         jewels.push(jewelRandom);
              
     console.log(jewelRandom);
